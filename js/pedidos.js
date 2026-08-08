@@ -28,8 +28,6 @@ async function search() {
   var html = "";
   try {
     let respuesta = await axios.get(url, {
-      withCredentials: true,
-      // credentials: "include",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -80,8 +78,6 @@ async function remove(id) {
     var url = URL_API + "/borrar/" + id;
     let respuesta = await axios
       .delete(url, {
-        withCredentials: true,
-        // credentials: "include",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -102,7 +98,6 @@ async function remove(id) {
 function clean() {
   document.getElementById("txtid").value = 0;
   document.getElementById("txtfecha_compra").value = "";
-  // document.getElementById("txtidcliente").value = 0;
   document.getElementById("txtidproducto").value = 0;
   document.getElementById("txtprecio").value = 0;
   document.getElementById("txtcantidad").value = 0;
@@ -129,7 +124,6 @@ async function save() {
     var url = URL_API + "/crear";
     axios
       .post(url, data, {
-        withCredentials: true,
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -164,7 +158,6 @@ async function save() {
     var url = URL_API + "/actualizar/" + id;
     axios
       .put(url, data, {
-        withCredentials: true,
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
