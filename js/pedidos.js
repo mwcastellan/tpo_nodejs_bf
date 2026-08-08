@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", init);
-const URL_API = "https://tpo-nodejs-bb.vercel.app/pedidos";
+const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/pedidos";
 
 var customers = [];
 

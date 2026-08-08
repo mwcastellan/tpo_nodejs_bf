@@ -1,4 +1,4 @@
-const URL_API = "https://tpo-nodejs-bb.vercel.app/clientes/registrar";
+const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/clientes/registrar";
 // ALTA CLIENTES
 async function save() {
   var data = {
