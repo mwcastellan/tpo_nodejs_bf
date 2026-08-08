@@ -1,4 +1,4 @@
-const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/clientes/login";
+const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/Clientes/login";
 // LOGIN CLIENTES
 async function login() {
   var data = {
@@ -8,7 +8,6 @@ async function login() {
   var url = URL_API;
   axios
     .post(url, data, {
-      withCredentials: true,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
