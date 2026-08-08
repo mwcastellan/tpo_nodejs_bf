@@ -8,31 +8,27 @@ async function login() {
   };
   var url = URL_API;
   axios
-    .post(url, data, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-    .then((res) => {
-      const ress = res.data.message;
-      let mensajesdeRes = "<ul>";
-      ress.forEach((ressi) => (mensajesdeRes += "<li>" + ressi.msg + "</li>"));
-      mensajesdeRes += "</ul>";
-      document.querySelector("#txtmsg").innerHTML = mensajesdeRes;
-    })
-    .catch((error) => {
-      if (error.response && error.response.status === 400) {
-        const errores = error.response.data.message;
-        let mensajesdeError = "<ul>";
-        errores.forEach(
-          (error) => (mensajesdeError += "<li>" + error.msg + "</li>"),
-        );
-        mensajesdeError += "</ul>";
-        document.querySelector("#txtmsg").innerHTML = mensajesdeError;
-      } else {
-        document.querySelector("#txtmsg").innerHTML =
-          "<p>" + error.message + "</p>";
-      }
-    });
+  .post(url, data, {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+  .then((res) => {
+    document.querySelector("#txtmsg").innerHTML =
+      "<p>" + res.data.mensaje + "</p>";
+
+    if (res.data.token) {
+      localStorage.setItem("token", res.data.token);
+    }
+  })
+  .catch((error) => {
+    if (error.response) {
+      document.querySelector("#txtmsg").innerHTML =
+        "<p>" + error.response.data.mensaje + "</p>";
+    } else {
+      document.querySelector("#txtmsg").innerHTML =
+        "<p>" + error.message + "</p>";
+    }
+  });
 }
