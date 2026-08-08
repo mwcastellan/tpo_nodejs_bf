@@ -1,4 +1,5 @@
-const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/Clientes/login";
+const URL_API =
+  "https://tpodotnetbbapi-production.up.railway.app/api/Clientes/login";
 // LOGIN CLIENTES
 async function login() {
   var data = {
@@ -25,7 +26,7 @@ async function login() {
         const errores = error.response.data.message;
         let mensajesdeError = "<ul>";
         errores.forEach(
-          (error) => (mensajesdeError += "<li>" + error.msg + "</li>")
+          (error) => (mensajesdeError += "<li>" + error.msg + "</li>"),
         );
         mensajesdeError += "</ul>";
         document.querySelector("#txtmsg").innerHTML = mensajesdeError;
