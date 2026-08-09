@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", init);
 
 const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/pedidos";
-
 let pedidos = [];
 
 function init() {
@@ -28,10 +27,9 @@ function cerrarModal() {
 
 // TRAER PEDIDOS
 async function search() {
-  var url = URL_API;
   var html = "";
   try {
-    let respuesta = await axios.get(url, {
+    let respuesta = await axios.get(URL_API, {
       withCredentials: true,
       // credentials: "include",
       headers: {
@@ -51,8 +49,8 @@ async function search() {
       <td>${pedido.IMPORTE}</td>
       <td>${pedido.IDESTADO}</td>
       <td>
-        <a href="#" onclick="edit(${pedido.id})" class="pedidos_myButton">Editar</a>
-        <a href="#" onclick="remove(${pedido.id})" class="pedidos_btnDelete">Eliminar</a>
+        <a href="#" onclick="edit(${pedido.ID})" class="pedidos_myButton">Editar</a>
+        <a href="#" onclick="remove(${pedido.ID})" class="pedidos_btnDelete">Eliminar</a>
       </td>
     </tr>`;
       html = html + row;
@@ -120,7 +118,6 @@ function clean() {
   document.getElementById("txtcantidad").value = "";
   document.getElementById("txtimporte").value = "";
   document.getElementById("txtidestado").value = 1;
-
   document.querySelector("#txtmsg").innerHTML = "";
 }
 
