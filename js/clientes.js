@@ -11,7 +11,6 @@ async function save() {
   var url = URL_API;
   axios
     .post(url, data, {
-      withCredentials: true,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
