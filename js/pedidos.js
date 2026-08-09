@@ -30,7 +30,7 @@ async function search() {
     const respuesta = await axios.get(URL_API, {
       withCredentials: true,
     });
-
+    console.log("PEDIDOS:", respuesta.data);
     pedidos = respuesta.data;
 
     let html = "";
