@@ -29,7 +29,7 @@ async function login() {
     // Opcional (para depuración)
     if (res.data.token) {
       localStorage.setItem("token", res.data.token);
-      console.log(res.data.token);
+      console.log("token generado: ",res.data.token);
     }
 
     // Redireccionar al módulo pedidos
