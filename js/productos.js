@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
 // funcion que carga y muestra
 const cargarProductos = async () => {
   try {
-    let respuesta = await fetch("https://tpo-nodejs-bb.vercel.app/reporte_01");
+    let respuesta = await fetch("https://tpodotnetbbapi-production.up.railway.app/api/reporte_01");
     if (respuesta.status == 200) {
       let datos = await respuesta.json();
       let contenedor = "";
