@@ -75,7 +75,7 @@ function edit(id) {
 
   document.getElementById("txtid").value = pedido.ID;
 
-  document.getElementById("txtfecha_compra").value = pedido.FECHA_COMPRA;
+  document.getElementById("txtfecha_compra").value = pedido.FECHA_COMPRA.split("T")[0];
 
   document.getElementById("txtidcliente").value = pedido.IDCLIENTE;
 
