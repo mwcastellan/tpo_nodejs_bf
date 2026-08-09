@@ -73,7 +73,7 @@ function edit(id) {
   if (!pedido) return;
 
   document.getElementById("txtid").value = pedido.ID;
-  document.getElementById("txtfecha_compra").value = pedido.FECHA_COMPRA;
+  document.getElementById("txtfecha_compra").value = "oooooooooo";// pedido.FECHA_COMPRA;
 
   document.getElementById("txtidcliente").value = pedido.IDCLIENTE;
 
