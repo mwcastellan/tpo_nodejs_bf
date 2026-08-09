@@ -31,6 +31,7 @@ async function search() {
       withCredentials: true,
     });
     pedidos = respuesta.data;
+    let html = "";
     pedidos.forEach((pedido) => {
       html += `
     <tr>
