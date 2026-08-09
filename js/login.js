@@ -32,12 +32,10 @@ async function login() {
     }
 
     // Redireccionar al módulo pedidos
-    setTimeout(() => {
-      window.location.href = "pedidos.html";
-    }, 1000);
+    //setTimeout(() => {
+    //  window.location.href = "pedidos.html";
+    //}, 1000);
   } catch (error) {
-    console.error(error);
-
     // Errores de validación ASP.NET
     if (error.response?.data?.errors) {
       let html = "<ul>";
