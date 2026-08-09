@@ -30,31 +30,34 @@ async function search() {
     const respuesta = await axios.get(URL_API, {
       withCredentials: true,
     });
-    console.log("PEDIDOS:", respuesta.data);
     pedidos = respuesta.data;
 
     let html = "";
 
     pedidos.forEach((pedido) => {
       html += `
-      <tr>
-        <td>${pedido.id}</td>
-        <td>${pedido.fecha_COMPRA}</td>
-        <td>${pedido.idcliente}</td>
-        <td>${pedido.idproducto}</td>
-        <td>${pedido.precio}</td>
-        <td>${pedido.cantidad}</td>
-        <td>${pedido.importe}</td>
-        <td>${pedido.idestado}</td>
-        <td>
-          #"
-             class="pedidos_myButton">Editar</a>
+    <tr>
+      <td>${pedido.ID}</td>
+      <td>${pedido.FECHA_COMPRA}</td>
+      <td>${pedido.IDCLIENTE}</td>
+      <td>${pedido.IDPRODUCTO}</td>
+      <td>${pedido.PRECIO}</td>
+      <td>${pedido.CANTIDAD}</td>
+      <td>${pedido.IMPORTE}</td>
+      <td>${pedido.IDESTADO}</td>
+      <td>
+        #"
+           class="pedidos_myButton">
+           Editar
+        </a>
 
-          #"
-             class="pedidos_btnDelete">Eliminar</a>
-        </td>
-      </tr>
-      `;
+        #"
+           class="pedidos_btnDelete">
+           Eliminar
+        </a>
+      </td>
+    </tr>
+  `;
     });
 
     document.querySelector("#pedidos tbody").innerHTML = html;
