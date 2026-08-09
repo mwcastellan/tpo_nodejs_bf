@@ -25,17 +25,24 @@ function cerrarModal() {
 // ======================================
 // TRAER PEDIDOS
 // ======================================
+
+// TRAER PEDIDOS
 async function search() {
+  var url = URL_API + "/ver";
+  var html = "";
   try {
-    const respuesta = await axios.get(URL_API, {
+    let respuesta = await axios.get(url, {
       withCredentials: true,
+      // credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     });
     pedidos = respuesta.data;
-    let html = "";
-    pedidos.forEach((pedido) => {
-      html += `
-    <tr>
-      <td>${pedido.ID}</td>
+    for (pedido of pedidos) {
+      var row = `<tr>
+      <td>${pedido.id}</td>
       <td>${pedido.FECHA_COMPRA}</td>
       <td>${pedido.IDCLIENTE}</td>
       <td>${pedido.IDPRODUCTO}</td>
@@ -44,26 +51,16 @@ async function search() {
       <td>${pedido.IMPORTE}</td>
       <td>${pedido.IDESTADO}</td>
       <td>
-        #"
-           class="pedidos_myButton">
-           Editar
-        </a>
-
-        #"
-           class="pedidos_btnDelete">
-           Eliminar
-        </a>
+        <a href="#" onclick="edit(${pedido.id})" class="pedidos_myButton">Editar</a>
+        <a href="#" onclick="remove(${pedido.id})" class="pedidos_btnDelete">Eliminar</a>
       </td>
-    </tr>
-  `;
-    });
-
-    document.querySelector("#pedidos tbody").innerHTML = html;
+    </tr>`;
+      html = html + row;
+    }
+    document.querySelector("#pedidos > tbody").outerHTML = html;
   } catch (error) {
-    console.error(error);
-
-    document.querySelector("#txtmsg").innerHTML =
-      error.response?.data?.mensaje || error.message;
+    html = "Sin novedad - " + error.status + " - " + error.message;
+    document.querySelector("#pedidos > tbody").outerHTML = html;
   }
 }
 
