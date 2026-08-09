@@ -36,27 +36,27 @@ async function search() {
 
     pedidos.forEach((pedido) => {
       html += `
-    <tr>
-      <td>${pedido.ID}</td>
-      <td>${pedido.FECHA_COMPRA}</td>
-      <td>${pedido.IDCLIENTE}</td>
-      <td>${pedido.IDPRODUCTO}</td>
-      <td>${pedido.PRECIO}</td>
-      <td>${pedido.CANTIDAD}</td>
-      <td>${pedido.IMPORTE}</td>
-      <td>${pedido.IDESTADO}</td>
-      <td>
-        #"
-        class="pedidos_myButton">
-        Editar
-        </a>
-        #"
-        class="pedidos_btnDelete">
-        Eliminar
-        </a>
-      </td>
-    </tr>
-  `;
+<tr>
+  <td>${pedido.ID}</td>
+  <td>${pedido.FECHA_COMPRA}</td>
+  <td>${pedido.IDCLIENTE}</td>
+  <td>${pedido.IDPRODUCTO}</td>
+  <td>${pedido.PRECIO}</td>
+  <td>${pedido.CANTIDAD}</td>
+  <td>${pedido.IMPORTE}</td>
+  <td>${pedido.IDESTADO}</td>
+  <td>
+    #"
+       class="pedidos_myButton">
+       Editar
+    </a>
+
+    <a href="#"
+       onclicktnDelete">
+       Eliminar
+    </a>
+  </td>
+</tr>`;
     });
 
     document.querySelector("#pedidos tbody").innerHTML = html;
