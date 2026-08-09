@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", init);
+
 const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/pedidos";
 
-var customers = [];
+let pedidos = [];
 
 function init() {
   search();
@@ -13,173 +14,176 @@ function agregarPedido() {
 }
 
 function abrirFormulario() {
-  htmlModal = document.getElementById("pedidos_modal");
-  htmlModal.setAttribute("class", "pedidos_modale pedidos_opened");
+  document.getElementById("pedidos_modal").className =
+    "pedidos_modale pedidos_opened";
 }
 
 function cerrarModal() {
-  htmlModal = document.getElementById("pedidos_modal");
-  htmlModal.setAttribute("class", "pedidos_modale");
+  document.getElementById("pedidos_modal").className = "pedidos_modale";
 }
 
+// ======================================
 // TRAER PEDIDOS
+// ======================================
 async function search() {
-  var url = URL_API + "/ver";
-  var html = "";
   try {
-    let respuesta = await axios.get(url, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    const respuesta = await axios.get(URL_API, {
+      withCredentials: true,
     });
+
     pedidos = respuesta.data;
-    for (pedido of pedidos) {
-      var row = `<tr>
-      <td>${pedido.id}</td>
-      <td>${pedido.FECHA_COMPRA}</td>
-      <td>${pedido.IDCLIENTE}</td>
-      <td>${pedido.IDPRODUCTO}</td>
-      <td>${pedido.PRECIO}</td>
-      <td>${pedido.CANTIDAD}</td>
-      <td>${pedido.IMPORTE}</td>
-      <td>${pedido.IDESTADO}</td>
-      <td>
-        <a href="#" onclick="edit(${pedido.id})" class="pedidos_myButton">Editar</a>
-        <a href="#" onclick="remove(${pedido.id})" class="pedidos_btnDelete">Eliminar</a>
-      </td>
-    </tr>`;
-      html = html + row;
-    }
-    document.querySelector("#pedidos > tbody").outerHTML = html;
+
+    let html = "";
+
+    pedidos.forEach((pedido) => {
+      html += `
+      <tr>
+        <td>${pedido.ID}</td>
+        <td>${pedido.FECHA_COMPRA}</td>
+        <td>${pedido.IDCLIENTE}</td>
+        <td>${pedido.IDPRODUCTO}</td>
+        <td>${pedido.PRECIO}</td>
+        <td>${pedido.CANTIDAD}</td>
+        <td>${pedido.IMPORTE}</td>
+        <td>${pedido.IDESTADO}</td>
+        <td>
+          #"
+             class="pedidos_myButton">Editar</a>
+
+          #"
+             class="pedidos_btnDelete">Eliminar</a>
+        </td>
+      </tr>
+      `;
+    });
+
+    document.querySelector("#pedidos tbody").innerHTML = html;
   } catch (error) {
-    html = "Sin novedad - " + error.status + " - " + error.message;
-    document.querySelector("#pedidos > tbody").outerHTML = html;
+    console.error(error);
+
+    document.querySelector("#txtmsg").innerHTML =
+      error.response?.data?.mensaje || error.message;
   }
 }
 
+// ======================================
+// EDITAR
+// ======================================
 function edit(id) {
   abrirFormulario();
-  var pedido = pedidos.find((x) => x.id == id);
-  document.getElementById("txtid").value = id;
+
+  const pedido = pedidos.find((x) => x.ID == id);
+
+  if (!pedido) return;
+
+  document.getElementById("txtid").value = pedido.ID;
   document.getElementById("txtfecha_compra").value = pedido.FECHA_COMPRA;
+
   document.getElementById("txtidcliente").value = pedido.IDCLIENTE;
+
   document.getElementById("txtidproducto").value = pedido.IDPRODUCTO;
+
   document.getElementById("txtprecio").value = pedido.PRECIO;
+
   document.getElementById("txtcantidad").value = pedido.CANTIDAD;
+
   document.getElementById("txtimporte").value = pedido.IMPORTE;
+
   document.getElementById("txtidestado").value = pedido.IDESTADO;
 }
 
-// ELIMINAR PEDIDO - PENDIENTE
+// ======================================
+// ELIMINAR
+// ======================================
 async function remove(id) {
-  respuesta = confirm("¿Está seguro de eliminar el Pedido Nro: " + id + " ?");
-  if (respuesta) {
-    var url = URL_API + "/borrar/" + id;
-    let respuesta = await axios
-      .delete(url, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-      .then((respuesta) => {
-        if (respuesta.status == 200)
-          alert("Eliminar: Pedido eliminado correctamente");
-        else alert("Eliminar(then): Error al grabar: " + respuesta.status);
-      })
-      .catch((err) => {
-        alert("Eliminar: Error al grabar: " + err.status);
-      });
-    window.location.reload();
+  if (!confirm(`¿Está seguro de eliminar el Pedido Nro: ${id}?`)) return;
+
+  try {
+    const respuesta = await axios.delete(`${URL_API}/${id}`, {
+      withCredentials: true,
+    });
+
+    alert(respuesta.data.mensaje);
+
+    search();
+  } catch (error) {
+    alert(error.response?.data?.mensaje || error.message);
   }
 }
 
+// ======================================
+// LIMPIAR FORMULARIO
+// ======================================
 function clean() {
   document.getElementById("txtid").value = 0;
   document.getElementById("txtfecha_compra").value = "";
-  document.getElementById("txtidproducto").value = 0;
-  document.getElementById("txtprecio").value = 0;
-  document.getElementById("txtcantidad").value = 0;
-  document.getElementById("txtimporte").value = 0;
+  document.getElementById("txtidproducto").value = "";
+  document.getElementById("txtprecio").value = "";
+  document.getElementById("txtcantidad").value = "";
+  document.getElementById("txtimporte").value = "";
   document.getElementById("txtidestado").value = 1;
-  document.getElementById("txtmsg").value = "Mensaje";
+
+  document.querySelector("#txtmsg").innerHTML = "";
 }
 
-// ALTA O MODIFICACION DE PEDIDOS
+// ======================================
+// ALTA / MODIFICACION
+// ======================================
 async function save() {
-  var data = {
+  const txtMsg = document.querySelector("#txtmsg");
+
+  const data = {
     FECHA_COMPRA: document.getElementById("txtfecha_compra").value,
-    IDCLIENTE: document.getElementById("txtidcliente").value,
-    IDPRODUCTO: document.getElementById("txtidproducto").value,
-    PRECIO: document.getElementById("txtprecio").value,
-    CANTIDAD: document.getElementById("txtcantidad").value,
-    IMPORTE: document.getElementById("txtimporte").value,
-    IDESTADO: document.getElementById("txtidestado").value,
+
+    IDPRODUCTO: parseInt(document.getElementById("txtidproducto").value),
+
+    PRECIO: parseFloat(document.getElementById("txtprecio").value),
+
+    CANTIDAD: parseInt(document.getElementById("txtcantidad").value),
+
+    IMPORTE: parseFloat(document.getElementById("txtimporte").value),
+
+    IDESTADO: parseInt(document.getElementById("txtidestado").value),
   };
 
-  var id = document.getElementById("txtid").value;
-  // ALTA //
-  if (id == "0") {
-    var url = URL_API + "/crear";
-    axios
-      .post(url, data, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        const ress = res.data.message;
-        let mensajesdeRes = "<ul>";
-        ress.forEach(
-          (ressi) => (mensajesdeRes += "<li>" + ressi.msg + "</li>")
-        );
-        mensajesdeRes += "</ul>";
-        document.querySelector("#txtmsg").innerHTML = mensajesdeRes;
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 422) {
-          const errores = error.response.data.message;
-          let mensajesdeError = "<ul>";
-          errores.forEach(
-            (error) => (mensajesdeError += "<li>" + error.msg + "</li>")
-          );
-          mensajesdeError += "</ul>";
-          document.querySelector("#txtmsg").innerHTML = mensajesdeError;
-        } else {
-          let mensajesdeError = "<ul><li>" + error.message + "</li> </ul>";
-          document.querySelector("#txtmsg").innerHTML = mensajesdeError;
-        }
+  const id = document.getElementById("txtid").value;
+
+  try {
+    let respuesta;
+
+    // ALTA
+    if (id === "0") {
+      respuesta = await axios.post(URL_API, data, {
+        withCredentials: true,
       });
-  }
-  // MODIFICACION
-  else {
-    var url = URL_API + "/actualizar/" + id;
-    axios
-      .put(url, data, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-      .then((respuesta) => {
-        document.querySelector("#txtmsg").innerHTML =
-          "<p>Registro actualizado</p>";
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 422) {
-          const errores = error.response.data.message;
-          let mensajesdeError = "<ul>";
-          errores.forEach(
-            (error) => (mensajesdeError += "<li>" + error.msg + "</li>")
-          );
-          mensajesdeError += "</ul>";
-          document.querySelector("#txtmsg").innerHTML = mensajesdeError;
-        } else {
-          let mensajesdeError = "<ul><li>" + error.message + "</li> </ul>";
-          document.querySelector("#txtmsg").innerHTML = mensajesdeError;
-        }
+    } else {
+      // MODIFICACION
+      respuesta = await axios.put(`${URL_API}/${id}`, data, {
+        withCredentials: true,
       });
+    }
+
+    txtMsg.innerHTML = respuesta.data.mensaje;
+
+    search();
+  } catch (error) {
+    // Validaciones ASP.NET
+    if (error.response?.data?.errors) {
+      const errores = error.response.data.errors;
+
+      let html = "<ul>";
+
+      Object.values(errores).forEach((listaErrores) => {
+        listaErrores.forEach((mensaje) => {
+          html += `<li>${mensaje}</li>`;
+        });
+      });
+
+      html += "</ul>";
+
+      txtMsg.innerHTML = html;
+    } else {
+      txtMsg.innerHTML = error.response?.data?.mensaje || error.message;
+    }
   }
 }
