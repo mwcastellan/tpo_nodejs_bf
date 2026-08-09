@@ -71,9 +71,14 @@ function edit(id) {
   const pedido = pedidos.find((x) => x.ID == id);
 
   if (!pedido) return;
+  console.log(pedido);
 
   document.getElementById("txtid").value = pedido.ID;
-  document.getElementById("txtfecha_compra").value = date(pedido.FECHA_COMPRA,"dd/mm/yyyy");
+
+  document.getElementById("txtfecha_compra").value = date(
+    pedido.FECHA_COMPRA,
+    "dd/mm/yyyy",
+  );
 
   document.getElementById("txtidcliente").value = pedido.IDCLIENTE;
 
