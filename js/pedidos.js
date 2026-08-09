@@ -47,13 +47,12 @@ async function search() {
       <td>${pedido.IDESTADO}</td>
       <td>
         #"
-           class="pedidos_myButton">
-           Editar
+        class="pedidos_myButton">
+        Editar
         </a>
-
         #"
-           class="pedidos_btnDelete">
-           Eliminar
+        class="pedidos_btnDelete">
+        Eliminar
         </a>
       </td>
     </tr>
