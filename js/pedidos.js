@@ -28,7 +28,7 @@ function cerrarModal() {
 
 // TRAER PEDIDOS
 async function search() {
-  var url = URL_API + "/ver";
+  var url = URL_API;
   var html = "";
   try {
     let respuesta = await axios.get(url, {
@@ -42,7 +42,7 @@ async function search() {
     pedidos = respuesta.data;
     for (pedido of pedidos) {
       var row = `<tr>
-      <td>${pedido.id}</td>
+      <td>${pedido.ID}</td>
       <td>${pedido.FECHA_COMPRA}</td>
       <td>${pedido.IDCLIENTE}</td>
       <td>${pedido.IDPRODUCTO}</td>
