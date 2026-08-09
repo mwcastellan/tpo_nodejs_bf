@@ -38,14 +38,14 @@ async function search() {
     pedidos.forEach((pedido) => {
       html += `
       <tr>
-        <td>${pedido.ID}</td>
-        <td>${pedido.FECHA_COMPRA}</td>
-        <td>${pedido.IDCLIENTE}</td>
-        <td>${pedido.IDPRODUCTO}</td>
-        <td>${pedido.PRECIO}</td>
-        <td>${pedido.CANTIDAD}</td>
-        <td>${pedido.IMPORTE}</td>
-        <td>${pedido.IDESTADO}</td>
+        <td>${pedido.id}</td>
+        <td>${pedido.fecha_COMPRA}</td>
+        <td>${pedido.idcliente}</td>
+        <td>${pedido.idproducto}</td>
+        <td>${pedido.precio}</td>
+        <td>${pedido.cantidad}</td>
+        <td>${pedido.importe}</td>
+        <td>${pedido.idestado}</td>
         <td>
           #"
              class="pedidos_myButton">Editar</a>
