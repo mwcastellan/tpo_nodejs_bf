@@ -30,11 +30,12 @@ async function login() {
     if (res.data.token) {
       localStorage.setItem("token", res.data.token);
     }
+    console.error(res.data.token);
 
     // Redireccionar al módulo pedidos
-    setTimeout(() => {
-      window.location.href = "pedidos.html";
-    }, 1000);
+    ///  setTimeout(() => {
+    ///    window.location.href = "pedidos.html";
+    ///  }, 1000);
   } catch (error) {
     console.error(error);
 
