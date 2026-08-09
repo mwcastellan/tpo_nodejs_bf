@@ -41,7 +41,7 @@ async function search() {
     for (pedido of pedidos) {
       var row = `<tr>
       <td>${pedido.ID}</td>
-      <td>${pedido.FECHA_COMPRA}</td>
+      <td>${pedido.FECHA_COMPRA.split("T")[0]}</td>
       <td>${pedido.IDCLIENTE}</td>
       <td>${pedido.IDPRODUCTO}</td>
       <td>${pedido.PRECIO}</td>
