@@ -26,15 +26,10 @@ async function login() {
 
     txtMsg.innerHTML = `<p style="color:green">${res.data.mensaje}</p>`;
 
-    // Opcional (para depuración)
-   // if (res.data.token) {
-   //   localStorage.setItem("token", res.data.token);
-   // }
-
     // Redireccionar al módulo pedidos
-    //setTimeout(() => {
-    //  window.location.href = "pedidos.html";
-    //}, 1000);
+    setTimeout(() => {
+      window.location.href = "pedidos.html";
+    }, 1000);
   } catch (error) {
     // Errores de validación ASP.NET
     if (error.response?.data?.errors) {
