@@ -77,4 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  const btn = document.getElementById("btnLogin");
+  if (btn) btn.addEventListener("click", (e) => { e.preventDefault(); login(); });
 });

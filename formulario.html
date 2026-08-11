@@ -41,6 +41,13 @@
       <nav class="navbar navbar-expand-sm navbar-light nav-bar">
         <div class="container-fluid">
           <h1>Veterinaria Grupo 9</h1>
+            <div style="display:inline-block; margin-left:12px;">
+              <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+              <select id="langSelector" aria-label="Seleccionar idioma">
+                <option value="es">&#x1F1EA;&#x1F1F8; ES</option>
+                <option value="en">&#x1F1EC;&#x1F1E7; EN</option>
+              </select>
+            </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -110,17 +117,17 @@
       <!-- Formulario solicitud de turno  -->
       <form action="/formulario.php" method="POST">
         <fieldset class="FormularioFieldset">
-          <legend><h2>Turnos</h2></legend>
-          <label for="nombreDueño">Nombre y Apellido:</label>
+          <legend><h2 data-i18n="form_turnos_title">Turnos</h2></legend>
+          <label for="nombreDueño" data-i18n="form_nombre_dueno">Nombre y Apellido:</label>
           <input type="text" id="nombreDueño" name="nombreDueño" required />
           <br />
           <br />
 
-          <label for="nombreMascota">Nombre de la mascota:</label>
+          <label for="nombreMascota" data-i18n="form_nombre_mascota">Nombre de la mascota:</label>
           <input type="text" id="nombreMascota" name="nombreMascota" required />
           <br />
           <br />
-          <label for="mascotaTipo">Tipo de mascota:</label>
+          <label for="mascotaTipo" data-i18n="form_tipo_mascota">Tipo de mascota:</label>
           <select name="mascotaTipo" id="mascotaTipo">
             <option>Gato</option>
             <option>Perro</option>
@@ -129,12 +136,12 @@
           </select>
           <br />
           <br />
-          <label for="foto">Suba una foto de su mascota</label>
+          <label for="foto" data-i18n="form_subir_foto">Suba una foto de su mascota</label>
           <br />
           <input type="file" name="foto" id="foto" accept="image/*" />
           <br />
           <br />
-          <p style="margin: 0px auto">Motivo del Turno:</p>
+          <p style="margin: 0px auto" data-i18n="form_motivo_turno">Motivo del Turno:</p>
           <label for="motivoTurno0"></label>
           <input
             id="motivoTurno0"
@@ -142,39 +149,39 @@
             name="motivoTurno"
             value="general"
             checked
-          />Chequeo General
+          /> <span data-i18n="motivo_general">Chequeo General</span>
           <label for="motivoTurno1"></label>
           <input
             id="motivoTurno1"
             type="radio"
             name="motivoTurno"
             value="vacuna"
-          />Vacunas
+          /> <span data-i18n="motivo_vacunas">Vacunas</span>
           <label for="motivoTurno2"></label>
           <input
             id="motivoTurno2"
             type="radio"
             name="motivoTurno"
             value="cirugia"
-          />Revisión por Cirugía
+          /> <span data-i18n="motivo_cirugia">Revisión por Cirugía</span>
           <label for="motivoTurno3"></label>
           <input
             id="motivoTurno3"
             type="radio"
             name="motivoTurno"
             value="otros"
-          />Otros
+          /> <span data-i18n="motivo_otros">Otros</span>
           <br />
-          <label for="dia">Día del turno</label>
+          <label for="dia" data-i18n="form_dia">Día del turno</label>
           <input type="date" name="dia" id="dia" required />
           <br />
           <br />
-          <label for="horario">Horario</label>
+          <label for="horario" data-i18n="form_horario">Horario</label>
           <input type="time" name="horario" id="horario" required />
           <br />
           <br />
-          <input type="submit" value="Enviar" onclick="validarturnos()" />
-          <input type="reset" value="Borrar" />
+          <button id="btnEnviarTurnos" type="button" data-i18n="form_enviar">Enviar</button>
+          <input type="reset" value="Borrar" data-i18n="form_borrar" />
         </fieldset>
         <br />
         <br />
@@ -182,8 +189,8 @@
       <!-- Formulario contacto  -->
       <form action="/formulario.php" method="POST">
         <fieldset class="FormularioFieldset">
-          <legend><h2>Contactenos</h2></legend>
-          <label for="nombreCompleto">Nombre y Apellido</label>
+          <legend><h2 data-i18n="contacto_title">Contactenos</h2></legend>
+          <label for="nombreCompleto" data-i18n="contacto_nombre">Nombre y Apellido</label>
           <input
             type="text"
             id="nombreCompleto"
@@ -192,15 +199,15 @@
           />
           <br />
           <br />
-          <label for="email">Mail</label>
+          <label for="email" data-i18n="contacto_mail">Mail</label>
           <input type="email" id="email" name="email" required />
           <br />
           <br />
-          <label for="motivo">Asunto</label>
+          <label for="motivo" data-i18n="contacto_asunto">Asunto</label>
           <input type="text" id="motivo" name="motivo" required />
           <br />
           <br />
-          <label for="comentario">Consulta</label>
+          <label for="comentario" data-i18n="contacto_consulta">Consulta</label>
           <textarea
             name="comentario"
             id="comentario"
@@ -209,7 +216,7 @@
           ></textarea>
           <br />
           <br />
-          <input type="submit" value="Enviar" onclick="validarconsulta()" />
+          <button id="btnEnviarConsulta" type="button" data-i18n="contacto_enviar">Enviar</button>
         </fieldset>
       </form>
     </main>
@@ -250,12 +257,14 @@
     </footer>
 
     <!-- Incluyendo funciones -->
-    <script src="./js/funciones_formulario.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/funciones_formulario.js"></script>
   </body>
 </html>

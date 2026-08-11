@@ -46,6 +46,13 @@
         <nav class="navbar navbar-expand-sm navbar-ligth nav-bar">
           <div class="container-fluid">
             <h1>Veterinaria Grupo 9</h1>
+            <div style="display:inline-block; margin-left:12px;">
+              <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+              <select id="langSelector" aria-label="Seleccionar idioma">
+                <option value="es">&#x1F1EA;&#x1F1F8; ES</option>
+                <option value="en">&#x1F1EC;&#x1F1E7; EN</option>
+              </select>
+            </div>
             <button
               class="navbar-toggler"
               type="button"
@@ -62,6 +69,7 @@
                     class="nav-link"
                     href="index.html"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_inicio"
                     >Inicio</a
                   >
                 </li>
@@ -70,6 +78,7 @@
                     class="nav-link"
                     href="productos.html"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_productos"
                     >Productos</a
                   >
                 </li>
@@ -78,6 +87,7 @@
                     class="nav-link"
                     href="adoptame.html"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_adoptame"
                     >Adoptame</a
                   >
                 </li>
@@ -87,6 +97,7 @@
                     class="nav-link"
                     href="index.html#Ubicacion"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_ubicacion"
                     >Ubicación</a
                   >
                 </li>
@@ -95,6 +106,7 @@
                     class="nav-link"
                     href="formulario.html"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_contacto"
                     >Contacto</a
                   >
                 </li>
@@ -103,6 +115,7 @@
                     class="nav-link"
                     href="pedidos.html"
                     style="font-size: 16px; color: black"
+                    data-i18n="nav_pedidos"
                     >Pedidos</a
                   >
                 </li>
@@ -159,6 +172,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
     <script src="./js/productos.js"></script>
   </body>
 </html>

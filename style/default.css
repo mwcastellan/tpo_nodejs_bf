@@ -63,3 +63,17 @@ li a.active {
   /* background-color: blueviolet; */
   color: rgb(227, 152, 152);
 }
+
+/* Language selector styles */
+#langSelector {
+  font-size: 0.85rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+#langSelector:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
+}

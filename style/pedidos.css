@@ -161,3 +161,26 @@
 .pedidos_modal-header {
   border-bottom: #eeeeee solid 1px;
 }
+
+/* Spinner overlay */
+#spinnerOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid rgba(255,255,255,0.2);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

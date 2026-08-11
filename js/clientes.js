@@ -43,5 +43,10 @@ async function save() {
         error.response?.data?.mensaje ||
         error.message;
     }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btnClientesSave");
+  if (btn) btn.addEventListener("click", (e) => { e.preventDefault(); save(); });
+});
   }
 }

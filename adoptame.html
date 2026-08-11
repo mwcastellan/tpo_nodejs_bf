@@ -49,6 +49,13 @@
             <div class="container-fluid">
     
               <h1>Veterinaria Grupo 9 </h1>
+              <div style="display:inline-block; margin-left:12px;">
+                <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+                <select id="langSelector" aria-label="Seleccionar idioma">
+                  <option value="es">&#x1F1EA;&#x1F1F8; ES</option>
+                  <option value="en">&#x1F1EC;&#x1F1E7; EN</option>
+                </select>
+              </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -56,23 +63,23 @@
               <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item ">
-                    <a class="nav-link" href="index.html" style="font-size: 16px; color: black;">Inicio</a>
+                    <a class="nav-link" href="index.html" style="font-size: 16px; color: black;" data-i18n="nav_inicio">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="productos.html" style="font-size: 16px; color: black;">Productos</a>
+                    <a class="nav-link" href="productos.html" style="font-size: 16px; color: black;" data-i18n="nav_productos">Productos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="adoptame.html" style="font-size: 16px; color: black; ">Adoptame</a>
+                    <a class="nav-link" href="adoptame.html" style="font-size: 16px; color: black; " data-i18n="nav_adoptame">Adoptame</a>
                   </li>
-    
+
                   <li class="nav-item">
-                    <a class="nav-link" href="index.html#Ubicacion" style="font-size: 16px; color: black;">Ubicación</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="formulario.html" style="font-size: 16px; color: black;">Contacto</a>
+                    <a class="nav-link" href="index.html#Ubicacion" style="font-size: 16px; color: black;" data-i18n="nav_ubicacion">Ubicación</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pedidos.html" style="font-size: 16px; color: black;">Pedidos</a>
+                    <a class="nav-link" href="formulario.html" style="font-size: 16px; color: black;" data-i18n="nav_contacto">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pedidos.html" style="font-size: 16px; color: black;" data-i18n="nav_pedidos">Pedidos</a>
                   </li>
                 </ul>
     
@@ -88,23 +95,23 @@
 
     <main>
         <section>
-            <h2 style="font-weight: 800;">Que tener en cuenta antes de adoptar una <strong>mascota.</strong></h2>
+            <h2 style="font-weight: 800;" data-i18n="adoptame_title">Que tener en cuenta antes de adoptar una <strong>mascota.</strong></h2>
             <article class="adoptar">
-                <h4>Adoptar una mascota es una decisión importante y emocionante. Aquí hay algunas cosas que deberías considerar:</h4>
+                <h4 data-i18n="adoptame_intro">Adoptar una mascota es una decisión importante y emocionante. Aquí hay algunas cosas que deberías considerar:</h4>
 
                 <ol>
-                    <li><b>Tipo de mascota:</b> Decide qué tipo de mascota se adapta mejor a tu estilo de vida, ya sea un perro, un gato, un pájaro, un conejo, etc. Cada especie tiene diferentes necesidades y requerirá diferentes cuidados.</li>
-                    <li><b>Espacio:</b> Considera el tamaño de tu hogar y si tienes suficiente espacio tanto dentro como fuera para la mascota que estás considerando. Algunas mascotas necesitan más espacio que otras.</li>
-                    <li><b>Tiempo:</b> Las mascotas requieren tiempo y atención. Piensa en cuánto tiempo tienes disponible para dedicarle a tu mascota cada día. Algunas mascotas, como los perros, necesitan mucho tiempo de ejercicio y socialización.</li>
-                    <li><b>Costos:</b> Tener una mascota conlleva gastos, como alimentos, atención veterinaria, juguetes, y otros accesorios. Asegúrate de poder cubrir estos costos antes de adoptar una mascota</li>
-                    <li><b>Compromiso a largo plazo:</b> Las mascotas viven muchos años, así que asegúrate de estar listo para el compromiso a largo plazo que implica cuidar de una mascota.</li>
-                    <li><b>Compatibilidad:</b> Considera si la mascota que estás considerando adoptar es compatible con tu estilo de vida, personalidad y necesidades.</li>
-                    <li><b>Condiciones de adopción:</b> Infórmate sobre los requisitos de adopción en el refugio o centro de rescate donde planeas adoptar. Algunos lugares tienen criterios específicos que debes cumplir antes de adoptar.
+                    <li data-i18n="adoptame_li_1"><b>Tipo de mascota:</b> Decide qué tipo de mascota se adapta mejor a tu estilo de vida, ya sea un perro, un gato, un pájaro, un conejo, etc. Cada especie tiene diferentes necesidades y requerirá diferentes cuidados.</li>
+                    <li data-i18n="adoptame_li_2"><b>Espacio:</b> Considera el tamaño de tu hogar y si tienes suficiente espacio tanto dentro como fuera para la mascota que estás considerando. Algunas mascotas necesitan más espacio que otras.</li>
+                    <li data-i18n="adoptame_li_3"><b>Tiempo:</b> Las mascotas requieren tiempo y atención. Piensa en cuánto tiempo tienes disponible para dedicarle a tu mascota cada día. Algunas mascotas, como los perros, necesitan mucho tiempo de ejercicio y socialización.</li>
+                    <li data-i18n="adoptame_li_4"><b>Costos:</b> Tener una mascota conlleva gastos, como alimentos, atención veterinaria, juguetes, y otros accesorios. Asegúrate de poder cubrir estos costos antes de adoptar una mascota</li>
+                    <li data-i18n="adoptame_li_5"><b>Compromiso a largo plazo:</b> Las mascotas viven muchos años, así que asegúrate de estar listo para el compromiso a largo plazo que implica cuidar de una mascota.</li>
+                    <li data-i18n="adoptame_li_6"><b>Compatibilidad:</b> Considera si la mascota que estás considerando adoptar es compatible con tu estilo de vida, personalidad y necesidades.</li>
+                    <li data-i18n="adoptame_li_7"><b>Condiciones de adopción:</b> Infórmate sobre los requisitos de adopción en el refugio o centro de rescate donde planeas adoptar. Algunos lugares tienen criterios específicos que debes cumplir antes de adoptar.
                     </li>
-                    <li><b>Preparación del hogar:</b> Asegúrate de que tu hogar esté seguro y listo para recibir a tu nueva mascota. Esto incluye preparar un área para dormir, asegurar cualquier peligro potencial y tener todos los suministros necesarios.</li>
-                    <li><b>Considera la adopción:</b> En lugar de comprar una mascota, considera adoptar de un refugio o centro de rescate. Hay muchas mascotas que necesitan un hogar amoroso y puedes hacer una gran diferencia en sus vidas al adoptar.</li>
-                    <li><b>Responsabilidad:</b> Adoptar una mascota es una gran responsabilidad. Asegúrate de estar listo para comprometerte a proporcionarle amor, cuidado y atención durante toda su vida.</li>
-                
+                    <li data-i18n="adoptame_li_8"><b>Preparación del hogar:</b> Asegúrate de que tu hogar esté seguro y listo para recibir a tu nueva mascota. Esto incluye preparar un área para dormir, asegurar cualquier peligro potencial y tener todos los suministros necesarios.</li>
+                    <li data-i18n="adoptame_li_9"><b>Considera la adopción:</b> En lugar de comprar una mascota, considera adoptar de un refugio o centro de rescate. Hay muchas mascotas que necesitan un hogar amoroso y puedes hacer una gran diferencia en sus vidas al adoptar.</li>
+                    <li data-i18n="adoptame_li_10"><b>Responsabilidad:</b> Adoptar una mascota es una gran responsabilidad. Asegúrate de estar listo para comprometerte a proporcionarle amor, cuidado y atención durante toda su vida.</li>
+
                 </ol>
 
             </article>
@@ -178,6 +185,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
 
 </body>
 </html>

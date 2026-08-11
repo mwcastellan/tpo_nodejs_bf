@@ -23,26 +23,33 @@
 
   <body>
     <main>
-      <form action="/clientes.php" method="POST">
+        <div style="position:relative; padding:10px 0 0 10px;">
+        <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+        <select id="langSelector" aria-label="Seleccionar idioma">
+          <option value="es">&#x1F1EA;&#x1F1F8; ES</option>
+          <option value="en">&#x1F1EC;&#x1F1E7; EN</option>
+        </select>
+      </div>
+        <form action="/clientes.php" method="POST">
         <fieldset class="ClientesFieldset">
-          <legend><h2>Registrarse</h2></legend>
-          <label for="EMAIL">EMAIL</label>
+          <legend><h2 data-i18n="clientes_registrarse">Registrarse</h2></legend>
+          <label for="EMAIL" data-i18n="clientes_email">EMAIL</label>
           <input type="text" id="EMAIL" name="EMAIL" required />
           <br />
           <br />
-          <label for="APELLIDO">APELLIDO</label>
+          <label for="APELLIDO" data-i18n="clientes_apellido">APELLIDO</label>
           <input type="text" id="APELLIDO" name="APELLIDO" required />
           <br />
           <br />
-          <label for="NOMBRE">NOMBRE</label>
+          <label for="NOMBRE" data-i18n="clientes_nombre">NOMBRE</label>
           <input type="text" id="NOMBRE" name="NOMBRE" required />
           <br />
           <br />
-          <label for="DIRECCION">DIRECCCION</label>
+          <label for="DIRECCION" data-i18n="clientes_direccion">DIRECCCION</label>
           <input type="text" id="DIRECCION" name="DIRECCION" required />
           <br />
           <br />
-          <label for="PASSWORD">PASSWORD</label>
+          <label for="PASSWORD" data-i18n="clientes_password">PASSWORD</label>
           <input type="password" id="PASSWORD" name="PASSWORD" required />
           <br />
           <br />
@@ -57,7 +64,7 @@
           <br />
           <br />
           <div class="clientes_modal-footer">
-            <a onclick="save()" href="#" class="clientes_btn">Guardar</a>
+            <button id="btnClientesSave" type="button" class="clientes_btn">Guardar</button>
           </div>
         </fieldset>
       </form>
@@ -65,6 +72,9 @@
 
     <!-- Incluyendo funciones -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
     <script src="./js/clientes.js"></script>
   </body>
 </html>

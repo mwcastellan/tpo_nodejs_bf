@@ -33,30 +33,37 @@
         <div class="container-fluid">
 
           <h1>Veterinaria Grupo 9 </h1>
+          <div style="display:inline-block; margin-left:12px;">
+              <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+              <select id="langSelector" aria-label="Seleccionar idioma">
+                <option value="es">&#x1F1EA;&#x1F1F8; ES</option>
+                <option value="en">&#x1F1EC;&#x1F1E7; EN</option>
+              </select>
+            </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div></div>
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html" style="font-size: 16px; color: black;">Inicio</a>
+                <li class="nav-item ">
+                <a class="nav-link" href="index.html" style="font-size: 16px; color: black;" data-i18n="nav_inicio">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="productos.html" style="font-size: 16px; color: black;">Productos</a>
+                <a class="nav-link" href="productos.html" style="font-size: 16px; color: black;" data-i18n="nav_productos">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="adoptame.html" style="font-size: 16px; color: black; ">Adoptame</a>
+                <a class="nav-link" href="adoptame.html" style="font-size: 16px; color: black; " data-i18n="nav_adoptame">Adoptame</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#Ubicacion" style="font-size: 16px; color: black;">Ubicación</a>
+                <a class="nav-link" href="#Ubicacion" style="font-size: 16px; color: black;" data-i18n="nav_ubicacion">Ubicación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="formulario.html" style="font-size: 16px; color: black;">Contacto</a>
+                <a class="nav-link" href="formulario.html" style="font-size: 16px; color: black;" data-i18n="nav_contacto">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pedidos.html" style="font-size: 16px; color: black;">Pedidos</a>
+                <a class="nav-link" href="pedidos.html" style="font-size: 16px; color: black;" data-i18n="nav_pedidos">Pedidos</a>
               </li>
             </ul>
 
@@ -118,35 +125,20 @@
 
     <aside>
       <div class="home" id="home">
-        <h3>Nosotros</h3>
-        <p>
-          Más que una clínica veterinaria, Veterinaria Grupo 9 es una familia dedicada a brindar atención integral a sus
-          mascotas. Con años de experiencia y un profundo amor por los animales, nuestro equipo se compromete a ofrecer
-          servicios veterinarios de vanguardia en un ambiente cálido y acogedor.
-        </p>
-        <h3>Nuestra Misión</h3>
-        <p>
-          Nuestra misión es brindar atención veterinaria de excelencia a las mascotas de nuestra comunidad, promoviendo
-          su salud y bienestar a través de servicios preventivos, curativos y de educación.
-        </p>
-        <h3>Nuestra Visión</h3>
-        <p>
-          Aspiramos a ser la clínica veterinaria líder en nuestra comunidad, reconocida por la excelencia en nuestros
-          servicios, el compromiso con el bienestar animal y la construcción de relaciones sólidas con nuestros
-          clientes.
-        </p>
+        <h3 data-i18n="index_welcome">Nosotros</h3>
+        <p data-i18n="index_about">Más que una clínica veterinaria, Veterinaria Grupo 9 es una familia dedicada a brindar atención integral a sus mascotas. Con años de experiencia y un profundo amor por los animales, nuestro equipo se compromete a ofrecer servicios veterinarios de vanguardia en un ambiente cálido y acogedor.</p>
+        <h3 data-i18n="mission_title">Nuestra Misión</h3>
+        <p data-i18n="mission_text">Nuestra misión es brindar atención veterinaria de excelencia a las mascotas de nuestra comunidad, promoviendo su salud y bienestar a través de servicios preventivos, curativos y de educación.</p>
+        <h3 data-i18n="vision_title">Nuestra Visión</h3>
+        <p data-i18n="vision_text">Aspiramos a ser la clínica veterinaria líder en nuestra comunidad, reconocida por la excelencia en nuestros servicios, el compromiso con el bienestar animal y la construcción de relaciones sólidas con nuestros clientes.</p>
       </div>
     </aside>
 
     <div class="Ubicacion" id="Ubicacion">
-      <h3>Ubicación</h3>
+      <h3 data-i18n="nav_ubicacion">Ubicación</h3>
 
       <div class="parrafo">
-        <p>
-          <i class="fa-solid fa-location-dot"></i> Nos encontramos en el
-          corazón de Palermo SOHO a metros de Plaza Serrano, en la esquina de
-          Honduras al 5000
-        </p>
+        <p data-i18n="ubicacion_text"><i class="fa-solid fa-location-dot"></i> Nos encontramos en el corazón de Palermo SOHO a metros de Plaza Serrano, en la esquina de Honduras al 5000</p>
       </div>
     </div>
 
@@ -187,6 +179,8 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
 </body>
 
 </html>
