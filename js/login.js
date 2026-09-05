@@ -3,7 +3,7 @@
 // ==========================================
 
 const URL_API =
-  "https://tpo-dot-net-bb-api-oote.vercel.app/api/clientes/login";
+  "https://tpo-dot-net-bb-api.vercel.app/api/clientes/login";
 
 async function login() {
   const txtMsg = document.querySelector("#txtmsg");
