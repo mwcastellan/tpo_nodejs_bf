@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", init);
 
-const URL_API = "https://tpo-dot-net-bb-api-oote.vercel.app/api/pedidos";
+const URL_API = "https://tpo-dot-net-bb-api.vercel.app/api/pedidos";
 let pedidos = [];
-const URL_CLIENTE = "https://tpo-dot-net-bb-api-oote.vercel.app/api/clientes/cliente";
+const URL_CLIENTE = "https://tpo-dot-net-bb-api.vercel.app/api/clientes/cliente";
 
 function init() {
   search();

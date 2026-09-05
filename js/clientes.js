@@ -1,4 +1,4 @@
-const URL_API = "https://tpo-dot-net-bb-api-oote.vercel.app/api/clientes/registrar";
+const URL_API = "https://tpo-dot-net-bb-api.vercel.app/api/clientes/registrar";
 
 // ALTA CLIENTES
 async function save() {
