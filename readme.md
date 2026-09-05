@@ -9,7 +9,7 @@ BackEnd TP2:
     BackEnd.................: https://github.com/mwcastellan/tpo_nodejs_bb
     FrontEnd Testing BackEnd: https://github.com/mwcastellan/tpo_nodejs_bf
 
-Base Datos MySQL:
+Base Datos MySQL:xxxx
     https://www.alwaysdata.com/en/
     Login: mcastellan@yahoo.com Clave: (Me la piden...)
     Base de Datos: MYSQL --> Esquema: MCASTELLAN_GRP9 --> Usuario: 363082_grp9 Clave: CaC24127GRP9
