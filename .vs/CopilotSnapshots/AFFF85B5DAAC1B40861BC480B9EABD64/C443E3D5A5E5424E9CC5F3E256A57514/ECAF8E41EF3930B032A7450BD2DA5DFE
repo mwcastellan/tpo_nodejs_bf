@@ -1,0 +1,31 @@
+﻿// Centralized toast helper using Toastify (requires Toastify script present on page)
+function showToast(message, type = "info") {
+  try {
+    let bg;
+    switch (type) {
+      case "error":
+        bg = "linear-gradient(90deg,#e74c3c,#c0392b)";
+        break;
+      case "warning":
+        bg = "linear-gradient(90deg,#f39c12,#d35400)";
+        break;
+      case "success":
+        bg = "linear-gradient(90deg,#2ecc71,#27ae60)";
+        break;
+      default:
+        bg = "linear-gradient(90deg,#3498db,#2980b9)";
+    }
+
+    Toastify({
+      text: String(message),
+      duration: 4000,
+      gravity: "bottom",
+      position: "right",
+      close: true,
+      stopOnFocus: true,
+      style: { background: bg, color: "#fff", fontSize: "14px", padding: "8px 14px" },
+    }).showToast();
+  } catch (e) {
+    console.log(message);
+  }
+}

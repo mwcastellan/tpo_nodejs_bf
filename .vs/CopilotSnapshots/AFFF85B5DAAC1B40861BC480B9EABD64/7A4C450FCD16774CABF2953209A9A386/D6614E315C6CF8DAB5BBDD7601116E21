@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptame</title>
+    <link rel="stylesheet" href="./style/default.css">
+</head> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria </title>
+    <link rel="icon" href="img/icon/favicon_II.ico" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@200;300&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./style/default.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  </head>
+
+
+<body>
+    
+    <!-- <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a class="active" href="adoptame.html">Adoptá</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+        </ul>
+    </nav> -->
+    
+          <!-- Menu Hamburguesa con bootstrap -->
+          <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> -->
+    <header>
+        <div>
+          <nav class="navbar navbar-expand-sm navbar-light nav-bar">
+            <div class="container-fluid">
+    
+              <h1>Veterinaria Grupo 9 </h1>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div></div>
+              <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="index.html" style="font-size: 16px; color: black;">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="productos.html" style="font-size: 16px; color: black;">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="adoptame.html" style="font-size: 16px; color: black; ">Adoptame</a>
+                  </li>
+    
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#Ubicacion" style="font-size: 16px; color: black;">Ubicación</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="formulario.html" style="font-size: 16px; color: black;">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pedidos.html" style="font-size: 16px; color: black;">Pedidos</a>
+                  </li>
+                </ul>
+    
+              </div>
+            </div>
+          </nav>    
+        </div>
+      </header>
+
+      
+
+
+
+    <main>
+        <section>
+            <h2 style="font-weight: 800;">Que tener en cuenta antes de adoptar una <strong>mascota.</strong></h2>
+            <article class="adoptar">
+                <h4>Adoptar una mascota es una decisión importante y emocionante. Aquí hay algunas cosas que deberías considerar:</h4>
+
+                <ol>
+                    <li><b>Tipo de mascota:</b> Decide qué tipo de mascota se adapta mejor a tu estilo de vida, ya sea un perro, un gato, un pájaro, un conejo, etc. Cada especie tiene diferentes necesidades y requerirá diferentes cuidados.</li>
+                    <li><b>Espacio:</b> Considera el tamaño de tu hogar y si tienes suficiente espacio tanto dentro como fuera para la mascota que estás considerando. Algunas mascotas necesitan más espacio que otras.</li>
+                    <li><b>Tiempo:</b> Las mascotas requieren tiempo y atención. Piensa en cuánto tiempo tienes disponible para dedicarle a tu mascota cada día. Algunas mascotas, como los perros, necesitan mucho tiempo de ejercicio y socialización.</li>
+                    <li><b>Costos:</b> Tener una mascota conlleva gastos, como alimentos, atención veterinaria, juguetes, y otros accesorios. Asegúrate de poder cubrir estos costos antes de adoptar una mascota</li>
+                    <li><b>Compromiso a largo plazo:</b> Las mascotas viven muchos años, así que asegúrate de estar listo para el compromiso a largo plazo que implica cuidar de una mascota.</li>
+                    <li><b>Compatibilidad:</b> Considera si la mascota que estás considerando adoptar es compatible con tu estilo de vida, personalidad y necesidades.</li>
+                    <li><b>Condiciones de adopción:</b> Infórmate sobre los requisitos de adopción en el refugio o centro de rescate donde planeas adoptar. Algunos lugares tienen criterios específicos que debes cumplir antes de adoptar.
+                    </li>
+                    <li><b>Preparación del hogar:</b> Asegúrate de que tu hogar esté seguro y listo para recibir a tu nueva mascota. Esto incluye preparar un área para dormir, asegurar cualquier peligro potencial y tener todos los suministros necesarios.</li>
+                    <li><b>Considera la adopción:</b> En lugar de comprar una mascota, considera adoptar de un refugio o centro de rescate. Hay muchas mascotas que necesitan un hogar amoroso y puedes hacer una gran diferencia en sus vidas al adoptar.</li>
+                    <li><b>Responsabilidad:</b> Adoptar una mascota es una gran responsabilidad. Asegúrate de estar listo para comprometerte a proporcionarle amor, cuidado y atención durante toda su vida.</li>
+                
+                </ol>
+
+            </article>
+
+        </section>
+
+        <div class="imagen">
+            <img src="./img/cachorro-1.jpg" alt="Perro cachorro" title="cachorro"> 
+            <img class="perro" src="./img/perro-joven.jpg" alt="Perro joven" title="Perro joven">
+            <img src="./img/perro_adulto.jpg" alt="Perro adulto" title="Perro adulto">
+        </div>
+
+        <section class="requisitos">
+            <h2 style="font-weight: 800;">Requisitos de <strong>adopción.</strong></h2>
+            <article class="requisitos-art">
+                <h4>Los requisitos de adopción pueden variar dependiendo del refugio, centro de rescate o organización de adopción de mascotas. Sin embargo, algunos requisitos comunes incluyen: </h4>
+                <ul>
+                    <li><b>Edad mínima:</b> Muchos lugares requieren que los adoptantes sean mayores de 18 años. Algunos pueden tener requisitos de edad más específicos dependiendo del tipo de mascota.</li>
+                    <li><b>Formulario de solicitud:</b> Por lo general, se requiere que los adoptantes completen un formulario de solicitud que incluye información sobre su historial como propietario de mascotas, su estilo de vida y su capacidad para cuidar de una mascota.</li>
+                    <li><b>Entrevista y visita al hogar:</b> Algunos refugios pueden requerir una entrevista con un representante y/o una visita al hogar para asegurarse de que el ambiente sea adecuado para la mascota que se está considerando adoptar.</li>
+                    <li><b>Verificación de antecedentes:</b> En algunos casos, los refugios pueden llevar a cabo una verificación de antecedentes para asegurarse de que los adoptantes no tengan un historial de abuso animal.</li>
+                    <li><b>Referencias personales:</b> Es posible que se soliciten referencias personales para confirmar la idoneidad del adoptante para cuidar de una mascota.</li>
+                    <li><b>Acuerdo de adopción:</b> Los adoptantes suelen tener que firmar un acuerdo de adopción que establece los términos y condiciones de la adopción, incluyendo el compromiso de proporcionar cuidados adecuados a la mascota.</li>
+                    <li><b>Tarifa de adopción:</b> Algunos lugares pueden requerir el pago de una tarifa de adopción que ayuda a cubrir los costos asociados con el cuidado de las mascotas en el refugio, como la atención veterinaria y la alimentación.</li>
+
+                </ul>
+                <p>Es importante comunicarse para conocer los requisitos exactos y procedimientos de adopción.</p>
+                <div class="center">
+                    <a class="btn-cris" href="./formulario.html">Si te decidiste llena el formulario.</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+
+<!-- Pie de pagina -->
+    <footer class="footer">
+        
+      
+      <div class="social">
+        <a class="facebook" 
+            href="https://facebook.com" 
+            title="Seguinos en Facebook"
+            target="_blank">
+        </a>
+        <a class="instagram" 
+            href="https://instagram.com" 
+            title="Seguinos en Instagram"
+            target="_blank">
+        </a>
+        <a class="github" 
+            href="https://github.com/mwcastellan/tpo_nodejs_fron/tree/main" 
+            title="Clona el repositorio en github"
+            target="_blank">
+        </a>
+        <a class="whatsapp" 
+            href="https://api.whatsapp.com/send?phone=110303456&text=Buenos%20dias,%20mi%20consulta%20es..." 
+            title="Mensajeanos por Whatsapp"
+            target="_blank">
+        </a>
+    </div>
+    
+    <p class="footer"> &copy; 2024 derechos reservados</p>
+    </footer>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/toasts.js"></script>
+    <script src="./js/i18n.js"></script>
+
+</body>
+</html>

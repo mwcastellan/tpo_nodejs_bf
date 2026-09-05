@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veterinaria</title>
+    <link rel="icon" href="img/icon/favicon_II.ico" />
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/default.css" />
+    <link rel="stylesheet" href="./style/clientes.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div style="position:relative; padding:10px 0 0 10px;">
+        <label for="langSelector" style="margin-right:6px; font-size:14px">ES/EN</label>
+        <select id="langSelector" aria-label="Seleccionar idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+      <form action="/clientes.php" method="POST">
+        <fieldset class="ClientesFieldset">
+          <legend><h2>Registrarse</h2></legend>
+          <label for="EMAIL">EMAIL</label>
+          <input type="text" id="EMAIL" name="EMAIL" required />
+          <br />
+          <br />
+          <label for="APELLIDO">APELLIDO</label>
+          <input type="text" id="APELLIDO" name="APELLIDO" required />
+          <br />
+          <br />
+          <label for="NOMBRE">NOMBRE</label>
+          <input type="text" id="NOMBRE" name="NOMBRE" required />
+          <br />
+          <br />
+          <label for="DIRECCION">DIRECCCION</label>
+          <input type="text" id="DIRECCION" name="DIRECCION" required />
+          <br />
+          <br />
+          <label for="PASSWORD">PASSWORD</label>
+          <input type="password" id="PASSWORD" name="PASSWORD" required />
+          <br />
+          <br />
+          <div>
+            <label>MENSAJE:</label>
+            <div id="txtmsg"></div>
+          </div>
+          <article>
+            StrongPassword: minLength: 8, minLowercase: 1, minUppercase: 1,
+            minNumbers: 1, minSymbols: 1,
+          </article>
+          <br />
+          <br />
+          <div class="clientes_modal-footer">
+            <button id="btnClientesSave" type="button" class="clientes_btn">Guardar</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <!-- Incluyendo funciones -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/clientes.js"></script>
+  </body>
+</html>

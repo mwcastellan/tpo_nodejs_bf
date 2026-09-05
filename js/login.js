@@ -3,7 +3,7 @@
 // ==========================================
 
 const URL_API =
-  "https://tpodotnetbbapi-production.up.railway.app/api/clientes/login";
+  "https://tpo-dot-net-bb-api-oote.vercel.app/api/clientes/login";
 
 async function login() {
   const txtMsg = document.querySelector("#txtmsg");
@@ -77,6 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  const btn = document.getElementById("btnLogin");
-  if (btn) btn.addEventListener("click", (e) => { e.preventDefault(); login(); });
 });

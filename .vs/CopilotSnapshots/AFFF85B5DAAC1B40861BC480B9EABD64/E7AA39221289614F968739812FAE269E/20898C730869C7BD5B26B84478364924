@@ -1,0 +1,110 @@
+﻿// Centralized toast helper using Toastify (requires Toastify script present on page)
+// Internationalization (basic ES/EN)
+const _lang = (function() {
+  try {
+    const stored = localStorage.getItem('app_lang');
+    if (stored) return stored;
+  } catch (e) {}
+  const nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+  return nav.startsWith('en') ? 'en' : 'es';
+})();
+
+const i18n = {
+  es: {
+    client_label: 'Cliente',
+    client_not_logged: 'No logueado',
+    no_pedidos: 'No hay pedidos para mostrar',
+    error_fetch_pedidos: 'Error al obtener pedidos',
+    orders_list: 'Lista de pedidos',
+    saved_ok: 'Guardado correctamente',
+    deleted_ok: 'El pedido fue eliminado',
+    invalid_product: 'ID de producto inválido',
+    invalid_price: 'Precio inválido',
+    invalid_quantity: 'Cantidad inválida',
+    invalid_amount: 'Importe inválido',
+    validation_error: 'Error de validación',
+    unexpected_error: 'Error inesperado',
+    campo_vacio: 'Un campo está vacío, favor de completar',
+    turno_solicitado: 'Turno solicitado',
+    mail_invalido: 'Escriba un mail válido',
+    consulta_enviada: 'Consulta enviada',
+    add_order: 'Agregar Pedido',
+    login_client: 'Login Cliente',
+    register_client: 'Registrar Cliente',
+    order_data: 'Datos del Pedido',
+    save: 'Guardar',
+    edit: 'Editar',
+    delete: 'Eliminar'
+  },
+  en: {
+    client_label: 'Client',
+    client_not_logged: 'Not logged',
+    no_pedidos: 'No orders to display',
+    error_fetch_pedidos: 'Error fetching orders',
+    orders_list: 'Orders list',
+    saved_ok: 'Saved successfully',
+    deleted_ok: 'Order deleted',
+    invalid_product: 'Invalid product ID',
+    invalid_price: 'Invalid price',
+    invalid_quantity: 'Invalid quantity',
+    invalid_amount: 'Invalid amount',
+    validation_error: 'Validation error',
+    unexpected_error: 'Unexpected error',
+    campo_vacio: 'A field is empty, please complete',
+    turno_solicitado: 'Appointment requested',
+    mail_invalido: 'Enter a valid email',
+    consulta_enviada: 'Inquiry sent'
+    ,add_order: 'Add Order',
+    login_client: 'Client Login',
+    register_client: 'Register Client',
+    order_data: 'Order Data',
+    save: 'Save',
+    edit: 'Edit',
+    delete: 'Delete'
+  }
+};
+
+function t(key) {
+  return (i18n[_lang] && i18n[_lang][key]) || (i18n['es'] && i18n['es'][key]) || key;
+}
+
+function showToast(message, type = "info") {
+  try {
+    let bg;
+    switch (type) {
+      case "error":
+        bg = "linear-gradient(90deg,#e74c3c,#c0392b)";
+        break;
+      case "warning":
+        bg = "linear-gradient(90deg,#f39c12,#d35400)";
+        break;
+      case "success":
+        bg = "linear-gradient(90deg,#2ecc71,#27ae60)";
+        break;
+      default:
+        bg = "linear-gradient(90deg,#3498db,#2980b9)";
+    }
+
+    Toastify({
+      text: String(message),
+      duration: 4000,
+      gravity: "bottom",
+      position: "right",
+      close: true,
+      stopOnFocus: true,
+      style: { background: bg, color: "#fff", fontSize: "14px", padding: "8px 14px" },
+    }).showToast();
+  } catch (e) {
+    console.log(message);
+  }
+}
+
+// Expose language switch helper
+function setLanguage(lang) {
+  try { localStorage.setItem('app_lang', lang); } catch (e) {}
+  window.location && window.location.reload();
+}
+
+// Export t and setLanguage to global
+window.t = t;
+window.setLanguage = setLanguage;

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veterinaria</title>
+    <link rel="icon" href="img/icon/favicon_II.ico" />
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/default.css" />
+    <link rel="stylesheet" href="./style/login.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <form action="/login.php" method="POST">
+        <fieldset class="LoginFieldset">
+          <legend><h2>Login</h2></legend>
+          <label for="EMAIL">EMAIL</label>
+          <input
+            type="text"
+            id="EMAIL"
+            name="EMAIL"
+            autocomplete="email"
+            required
+          />
+          <br />
+          <br />
+          <label for="PASSWORD">PASSWORD</label>
+          <input
+            type="password"
+            id="PASSWORD"
+            name="PASSWORD"
+            autocomplete="current-password"
+            required
+          />
+          <br />
+          <br />
+          <div>
+            <p>MENSAJE:</p>
+            <div id="txtmsg"></div>
+          </div>
+          <br />
+          <br />
+          <div class="login_modal-footer">
+            <button id="btnLogin" type="button" class="login_btn">Guardar</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <!-- Incluyendo funciones -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/login.js"></script>
+  </body>
+</html>

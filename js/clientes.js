@@ -1,4 +1,4 @@
-const URL_API = "https://tpodotnetbbapi-production.up.railway.app/api/clientes/registrar";
+const URL_API = "https://tpo-dot-net-bb-api-oote.vercel.app/api/clientes/registrar";
 
 // ALTA CLIENTES
 async function save() {
@@ -43,10 +43,5 @@ async function save() {
         error.response?.data?.mensaje ||
         error.message;
     }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btnClientesSave");
-  if (btn) btn.addEventListener("click", (e) => { e.preventDefault(); save(); });
-});
   }
 }
