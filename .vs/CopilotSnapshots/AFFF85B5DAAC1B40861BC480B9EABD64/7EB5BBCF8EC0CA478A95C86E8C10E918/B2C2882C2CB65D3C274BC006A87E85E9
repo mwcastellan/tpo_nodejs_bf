@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -59,8 +59,8 @@
           </div>
           <br />
           <br />
-            <div class="login_modal-footer">
-            <button id="btnLogin" type="button" class="login_btn" data-i18n="save" onclick="login()">Guardar</button>
+          <div class="login_modal-footer">
+            <button id="btnLogin" type="button" class="login_btn" data-i18n="save">Guardar</button>
           </div>
         </fieldset>
       </form>

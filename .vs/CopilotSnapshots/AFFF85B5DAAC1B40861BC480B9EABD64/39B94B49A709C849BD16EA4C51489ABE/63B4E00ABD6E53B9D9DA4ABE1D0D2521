@@ -1,9 +1,10 @@
-// ==========================================
+﻿// ==========================================
 // LOGIN CLIENTES
 // ==========================================
 
-// Endpoint correcto para login
-const URL_API = "https://tpo-dot-net-bb-api.vercel.app/api/clientes/login";
+// Use the production Railway API endpoint (matches other modules)
+const URL_API =
+  "https://tpo-dot-net-bb-api.vercel.app/api/clientes/login";
 
 async function login() {
   const txtMsg = document.querySelector("#txtmsg");
